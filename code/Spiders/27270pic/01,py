@@ -8,7 +8,7 @@ headers = {"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 
 data = {
 	"Username":"554414425",
-	"Password":"privileges582",
+	"Password":"1234",
 	"DynamicPassword":"",
 	# "Captcha":"admn"
 }
