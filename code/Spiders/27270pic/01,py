@@ -1,0 +1,28 @@
+import requests
+import re
+from bs4 import BeautifulSoup
+
+ssion = requests.session()
+
+headers = {"User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"}
+
+data = {
+	"Username":"554414425",
+	"Password":"privileges582",
+	"DynamicPassword":"",
+	# "Captcha":"admn"
+}
+url = "http://www.kashangwl.com/ksxyylwl/Login"
+ssion.post(url,data=data)
+tousu_url="http://www.kashangwl.com/ksxyylwl/QueryOrderComplaint?State=3"
+
+response = ssion.get(tousu_url)
+
+tousu = response.text
+# print(tousu)
+
+pattern = re.compile(r'<table.*?class="m-table">(.*?)</table>',re.S)
+
+con = pattern.findall(tousu)
+
+print(con)
